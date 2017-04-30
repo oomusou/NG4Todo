@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Todo} from './todo';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   inputHint = 'What needs to be done?';
 
-  todos: string[] = [];
+  todos: Todo[] = [];
 
   addTodo(newTodo: HTMLInputElement) {
-    this.todos = [...this.todos, newTodo.value];
+    this.todos = [...this.todos, {
+      completed: false,
+      value: newTodo.value
+    }];
     newTodo.value = '';
   }
 
