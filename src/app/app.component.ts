@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   inputHint = 'What needs to be done?';
+
+  todos: string[] = [];
+
+  addTodo(newTodo: HTMLInputElement) {
+    this.todos = [...this.todos, newTodo.value];
+    newTodo.value = '';
+  }
 }
