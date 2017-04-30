@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Todo} from '../todo';
 
 @Component({
@@ -10,6 +10,9 @@ export class FooterComponent {
   @Input()
   private todos: Todo[] = [];
 
+  @Output()
+  clearCompletedEvent = new EventEmitter();
+
   shouldShowTodos() {
     return this.todos.length > 0;
   }
@@ -18,5 +21,9 @@ export class FooterComponent {
     return this.todos
       .filter(todo => !todo.completed)
       .length;
+  }
+
+  clearCompleted() {
+    this.clearCompletedEvent.emit();
   }
 }

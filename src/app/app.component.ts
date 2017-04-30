@@ -22,4 +22,8 @@ export class AppComponent {
   shouldShowTodos() {
     return this.todos.length > 0;
   }
+
+  clearCompleted() {
+    this.todos = this.todos.filter(value => !value.completed);
+  }
 }
