@@ -14,4 +14,8 @@ export class AppComponent {
     this.todos = [...this.todos, newTodo.value];
     newTodo.value = '';
   }
+
+  shouldShowTodos() {
+    return this.todos.length > 0;
+  }
 }
