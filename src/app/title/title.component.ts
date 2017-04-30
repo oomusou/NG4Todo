@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TitleComponent implements OnInit {
 
+  title  = 'todos';
+
   constructor() { }
 
   ngOnInit() {
   }
-
 }
