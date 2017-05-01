@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Todo} from '../todo';
-import {FilterType} from '../filter-type.enum';
+import {Todo} from '../../models/todo';
+import {FilterType} from '../../enums/filter-type.enum';
 
 @Component({
   selector: 'app-footer',

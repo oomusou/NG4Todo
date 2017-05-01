@@ -4,9 +4,9 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
-import {TitleComponent} from './title/title.component';
-import {FooterComponent} from './footer/footer.component';
-import {FilterTodoPipe} from './filter-todo.pipe';
+import {TitleComponent} from './components/title/title.component';
+import {FooterComponent} from './components/footer/footer.component';
+import {FilterTodoPipe} from './pipes/filter-todo/filter-todo.pipe';
 
 @NgModule({
   declarations: [
