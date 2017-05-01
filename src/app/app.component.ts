@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Todo} from './todo';
 
 @Component({
@@ -13,6 +13,7 @@ export class AppComponent {
 
   addTodo(newTodo: HTMLInputElement) {
     this.todos = [...this.todos, {
+      id: this.todos.length + 1,
       completed: false,
       value: newTodo.value
     }];
@@ -25,5 +26,9 @@ export class AppComponent {
 
   clearCompleted() {
     this.todos = this.todos.filter(value => !value.completed);
+  }
+
+  removeTodo(id: number) {
+    this.todos = this.todos.filter(todo => todo.id !== id);
   }
 }
