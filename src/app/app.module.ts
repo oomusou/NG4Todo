@@ -1,17 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
-import { AppComponent } from './app.component';
-import { TitleComponent } from './title/title.component';
-import { FooterComponent } from './footer/footer.component';
+import {AppComponent} from './app.component';
+import {TitleComponent} from './title/title.component';
+import {FooterComponent} from './footer/footer.component';
+import {FilterTodoPipe} from './filter-todo.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     TitleComponent,
     FooterComponent,
+    FilterTodoPipe,
   ],
   imports: [
     BrowserModule,
@@ -21,4 +23,5 @@ import { FooterComponent } from './footer/footer.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

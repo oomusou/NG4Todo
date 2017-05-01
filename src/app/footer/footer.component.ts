@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Todo} from '../todo';
+import {FilterType} from '../filter-type.enum';
 
 @Component({
   selector: 'app-footer',
@@ -13,6 +14,9 @@ export class FooterComponent {
   @Output()
   clearCompletedEvent = new EventEmitter();
 
+  filterType: FilterType;
+  FilterType = FilterType;
+
   shouldShowTodos() {
     return this.todos.length > 0;
   }
@@ -25,5 +29,21 @@ export class FooterComponent {
 
   clearCompleted() {
     this.clearCompletedEvent.emit();
+  }
+
+  filterAllTodos() {
+    this.filterType = FilterType.All;
+  }
+
+  filterActiveTodos() {
+    this.filterType = FilterType.Active;
+  }
+
+  filterCompletedTodos() {
+    this.filterType = FilterType.Completed;
+  }
+
+  isSelected(filterType: FilterType): boolean {
+    return this.filterType === filterType;
   }
 }
